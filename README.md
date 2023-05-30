@@ -3,7 +3,7 @@
 
 ### Buat Tabel pegawai
 '''
-CREATE TABLE pegawai (
+ CREATE TABLE pegawai (
   idpegawai VARCHAR(10) PRIMARY KEY,
   nama_depan VARCHAR(15),
   nama_belakang VARCHAR(15),
@@ -31,49 +31,49 @@ VALUES
 
 1. Tampilkan pegawai yang gaji bukan 2000000 dan 1250000 !
 '''
-SELECT * FROM pegawai WHERE gaji NOT IN (2000000, 1250000);
+ SELECT * FROM pegawai WHERE gaji NOT IN (2000000, 1250000);
 '''
 ![image4](SS/SS4.png)
 2. Tampilkan pegawai yang tunjangannya NULL!
 '''
-SELECT * FROM pegawai WHERE tunjangan IS NULL;
+ SELECT * FROM pegawai WHERE tunjangan IS NULL;
 '''
 ![image5](SS/SS5.png)
 3. Tampilkan pegawai yang tunjangannya tidak NULL!
 '''
-SELECT * FROM pegawai WHERE tunjangan IS NOT NULL;
+ SELECT * FROM pegawai WHERE tunjangan IS NOT NULL;
 '''
 ![iamge6](SS/SS6.png)
 4. Tampilkan/hitung jumlah baris/record tabel pegawai!
 '''
-SELECT COUNT(*) FROM pegawai;
+ SELECT COUNT(*) FROM pegawai;
 '''
 ![image7](SS/SS7.png)
 5. Tampilkan/hitung jumlah total gaji di tabel pegawai!
 '''
-SELECT SUM(gaji) FROM pegawai;
+ SELECT SUM(gaji) FROM pegawai;
 '''
 ![image8](SS/SS8.png)
 6. Tampilkan/hitung rata-rata gaji pegawai!
 '''
-SELECT AVG(gaji) FROM pegawai;
+ SELECT AVG(gaji) FROM pegawai;
 '''
 ![image9](SS/SS9.png)
 7. Tampilkan gaji terkecil!
 '''
-SELECT MIN(gaji) FROM pegawai;
+ SELECT MIN(gaji) FROM pegawai;
 '''
 ![image10](SS/SS10.png)
 8. Tampilkan gaji terbesar!
 '''
-SELECT MAX(gaji) FROM pegawai;
+ SELECT MAX(gaji) FROM pegawai;
 '''
 ![image11](SS/SS11.png)
 
 ### Tabel hewan
 Membuat tabel Hewan
 '''
-CREATE TABLE hewan (
+ CREATE TABLE hewan (
     -> id VARCHAR(10) PRIMARY KEY,
     -> nama VARCHAR(15),
     -> owner VARCHAR(20),
@@ -85,27 +85,27 @@ CREATE TABLE hewan (
 ![image13](SS/SS13.png)
 1. Tampilkan jumlah hewan yang dimiliki setiap owner.
 '''
-SELECT owner, COUNT(*) as jumlah_hewan FROM hewan GROUP BY owner;
+ SELECT owner, COUNT(*) as jumlah_hewan FROM hewan GROUP BY owner;
 '''
 ![image14](SS/SS14.png)
 2. Tampilkan jumlah hewan berdasarkan spesies.
 '''
-select species, COUNT(*) as jumlah_hewan FROM hewan GROUP BY species;
+ select species, COUNT(*) as jumlah_hewan FROM hewan GROUP BY species;
 '''
 ![image15](SS/SS15.png)
 3. Tampilkan jumlah hewan berdasarkan jenis kelamin.
 '''
-SELECT sex, COUNT(*) as jumlah_hewan FROM hewan GROUP BY sex;
+ SELECT sex, COUNT(*) as jumlah_hewan FROM hewan GROUP BY sex;
 '''
 ![image16](SS/SS16.png)
 4. Tampilkan jumlah hewan berdasarkan spesies dan jenis kelamin.
 '''
-SELECT species, sex, COUNT(*) as jumlah_hewan FROM hewan GROUP BY species, sex;
+ SELECT species, sex, COUNT(*) as jumlah_hewan FROM hewan GROUP BY species, sex;
 '''
 ![image17](SS/SS17.png)
 5. Tampilkan jumlah hewan berdasarkan spesis (cat dan dog saja) dan jenis kelamin.
 '''
-select species, sex, COUNT(*) as jumlah_hewan
+ select species, sex, COUNT(*) as jumlah_hewan
     -> FROM hewan
     -> WHERE species IN ('Cat', 'Dog')
     -> GROUP BY species, sex;
